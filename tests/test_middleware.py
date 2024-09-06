@@ -1,6 +1,3 @@
-import os
-from pathlib import Path
-
 from django.test import TestCase, client, override_settings
 from nigerian_only.enums import CountryCode
 
@@ -16,7 +13,6 @@ class TestNigerianOnlyMiddleware(TestCase):
         self.client = client.Client()
 
     def tearDown(self):
-        # Perform additional cleanup if necessary
         super().tearDown()
 
     @override_settings(GEOIP_PATH=None)
