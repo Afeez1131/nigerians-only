@@ -177,3 +177,4 @@ pytest.ini
 .idea
 geoip
 geoip/*
+/geoip/
