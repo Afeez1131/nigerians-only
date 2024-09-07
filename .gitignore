@@ -175,6 +175,6 @@ cython_debug/
 pyrightconfig.json
 pytest.ini
 .idea
-geoip
-geoip/*
-/geoip/
+tests/geoip
+tests/geoip/*
+/tests/geoip/

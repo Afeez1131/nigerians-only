@@ -1,8 +1,7 @@
 from django.conf import settings
 from django.contrib.gis.geoip2 import GeoIP2, GeoIP2Exception
-from nigerian_only.enums import CountryCode
+from nigerian_only.enums import CountryChoices
 
-WHITELISTED = getattr(settings, 'WHITELISTED_COUNTRIES', [CountryCode.NG])
 
 
 def get_client_ip(request):
@@ -42,6 +41,7 @@ def is_client_from_whitelisted_countries(client_ip):
     :param client_ip:
     :return: boolean
     """
+    WHITELISTED = getattr(settings, 'WHITELISTED_COUNTRIES', [CountryChoices.Nigeria])
     country = get_request_origination(client_ip)
-    return WHITELISTED.__contains__(country)
+    return country in WHITELISTED
 

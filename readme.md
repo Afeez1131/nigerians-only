@@ -44,11 +44,11 @@ Once you achieve the above steps, the middleware would restrict access to only u
 ## NOTE
 - The access would not be restricted if any of the above steps is not completed.
 - During development, the default ip address is `127.0.0.1`, which is not a valid ip address that can be used to determine the country of the user.
-Therefore, you can set `ALLOWED_TEST_IPS` in the settings to allow access to the application during development.
+Therefore, you can set `WHITELISTED_IPS` in the settings to allow access to the application during development.
 
    .. code-block:: python
 
-      ALLOWED_TEST_IPS = ['127.0.0.1']
+      WHITELISTED_IPS = ['127.0.0.1']
 
 - To test the middleware, you can use a VPN to change your location to one of the specified countries or use a valid ip address that can be used to determine the country of the user.
 
