@@ -29,7 +29,7 @@ MIDDLEWARE = [
 [Country Codes Alpha-2 & Alpha-3](https://www.iban.com/country-codes)
 
 ```python
-WHITE_LISTED_COUNTRIES = ["NG", "GH"]
+WHITELISTED_COUNTRIES = ["NG", "GH"]
 ```
 
 5. Download the GEOIP2 database from [MaxMind](https://dev.maxmind.com/geoip/geoip2/geolite2/) and set the path in the settings.

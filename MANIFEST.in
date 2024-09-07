@@ -3,3 +3,8 @@ include README.rst
 
 recursive-exclude nigerian_only/migrations *
 recursive-exclude tests *
+
+# Exclude certain files or directories
+exclude tests/*
+exclude migrations/*
+exclude *.pyc

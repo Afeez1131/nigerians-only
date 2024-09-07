@@ -3,7 +3,7 @@ from django.conf import settings
 from pathlib import Path
 from django.shortcuts import render
 
-from nigerian_only.utils import get_client_ip, is_client_from_whitelisted_countries, get_request_origination
+from nigerian_only.utils import get_client_ip, is_client_from_whitelisted_countries
 
 
 class NigerianOnlyMiddleware:
