@@ -1,8 +1,12 @@
 from django.conf import settings
 from django.contrib.gis.geoip2 import GeoIP2, GeoIP2Exception
 from nigerian_only.enums import CountryChoices
+from nigerian_only.exceptions import LocalIpException
 
 
+def is_local_ip(ip):
+    local_ips = ['127.0.0.1']
+    return ip in local_ips
 
 def get_client_ip(request):
     """
@@ -25,6 +29,8 @@ def get_request_origination(client_ip):
     :return: request origination (country)
     """
     geo = GeoIP2()
+    if is_local_ip(client_ip):
+        raise LocalIpException(client_ip)
     try:
         response = geo.country(client_ip)
         country = response.get('country_code', '')

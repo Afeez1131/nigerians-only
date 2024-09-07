@@ -3,7 +3,7 @@ from django.conf import settings
 from pathlib import Path
 from django.shortcuts import render
 
-from nigerian_only.utils import get_client_ip, is_client_from_whitelisted_countries
+from nigerian_only.utils import get_client_ip, is_client_from_whitelisted_countries, get_request_origination
 
 
 class NigerianOnlyMiddleware:
@@ -14,7 +14,6 @@ class NigerianOnlyMiddleware:
         GEOIP_DB_PATH = getattr(settings, 'GEOIP_PATH', None)
         WHITELISTED_IPS = getattr(settings, 'WHITELISTED_IPS', [])
         WHITELISTED_COUNTRIES = getattr(settings, 'WHITELISTED_COUNTRIES', [])
-
         if not GEOIP_DB_PATH:
             return self.get_response(request)
 
