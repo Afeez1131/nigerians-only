@@ -11,7 +11,7 @@ Django Nigerians Only is a third party Django application that allows developers
 1. Install Nigerian Only using pip:
 
    ```bash
-   pip install django_nigerian_only
+   pip install django-nigerians-only
    ```
 
 2. Add `'nigerian_only'` to `INSTALLED_APPS` in your Django project's settings.
