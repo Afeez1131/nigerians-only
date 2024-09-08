@@ -1,7 +1,9 @@
 import re
 from django.conf import settings
 from pathlib import Path
-from django.shortcuts import render
+
+from django.http import HttpResponseForbidden
+from django.core.exceptions import PermissionDenied
 
 from nigerian_only.utils import get_client_ip, is_client_from_whitelisted_countries
 
@@ -24,6 +26,6 @@ class NigerianOnlyMiddleware:
             return self.get_response(request)
         client_ip = get_client_ip(request)
         if client_ip not in WHITELISTED_IPS and not is_client_from_whitelisted_countries(client_ip):
-            return render(request, '403.html', status=403)
+            raise PermissionDenied
 
         return self.get_response(request)

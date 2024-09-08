@@ -1,6 +1,7 @@
 include LICENSE
 include README.rst
 
+# recursive-include nigerian_only/templates *
 recursive-exclude nigerian_only/migrations *
 recursive-exclude tests *
 

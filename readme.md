@@ -38,13 +38,15 @@ WHITELISTED_COUNTRIES = ["NG", "GH"]
 GEOIP_PATH = "path/to/GeoLite2-Country.mmdb"
 ```
 ## Usage
-Once you achieve the above steps, the middleware would restrict access to only users from the specified countries.
+Once you achieve the above steps, the middleware would restrict access to only users from the whitelisted countries.
+
+You can also checkout this app with a basic setup of the package [Django Nigeria only](https://github.com/Afeez1131/django-nigerians-only-example)
 
 
 ## NOTE
 - The access would not be restricted if any of the above steps is not completed.
 - During development, the default ip address is `127.0.0.1`, which is not a valid ip address that can be used to determine the country of the user.
-Therefore, you can set `WHITELISTED_IPS` in the settings to allow access to the application during development.
+Therefore, you need to set `WHITELISTED_IPS` in the settings to allow access to the application during development.
 
 ```python
 WHITELISTED_IPS = ['127.0.0.1']
