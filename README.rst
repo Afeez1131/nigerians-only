@@ -7,8 +7,8 @@ Nigerian Only
 Requirements
 ~~~~~~~~~~~~
 
-- Python 3.10
-- Django 5
+- Django >= 4.1
+- geoip2 >= 4.8.0
 
 Installation Steps
 ~~~~~~~~~~~~~~~~~~
@@ -17,7 +17,7 @@ Installation Steps
 
    .. code-block:: bash
 
-      pip install django_nigerian_only
+      pip install django-nigerians-only
 
 2. Add `'nigerian_only'` to `INSTALLED_APPS` in your Django project's settings.
 
