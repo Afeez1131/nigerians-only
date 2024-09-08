@@ -3,7 +3,7 @@ Django Nigerians Only is a third party Django application that allows developers
 -------
 ### Requirements
 
-- Django 5.0.1
+- Django >= 4.1
 - geoip2 >= 4.8.0
 
 ### Installation Steps
