@@ -13,7 +13,7 @@ def pytest_configure():
             "nigerian_only",
         ],
         MIDDLEWARE=[
-            "nigerian_only.middleware.NigerianOnlyMiddleware",
+            "nigerian_only.middleware.NigeriansOnlyMiddleware",
         ],
         ROOT_URLCONF="nigerian_only.urls",
         TEMPLATES=[

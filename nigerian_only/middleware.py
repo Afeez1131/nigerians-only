@@ -8,7 +8,7 @@ from django.core.exceptions import PermissionDenied
 from nigerian_only.utils import get_client_ip, is_client_from_whitelisted_countries
 
 
-class NigerianOnlyMiddleware:
+class NigeriansOnlyMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 

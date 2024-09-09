@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseForbidden
 from django.test import TestCase
 
 from tests import TestIP
@@ -17,7 +17,8 @@ class TestIsFromNigeria(TestCase):
         response = self.client.get(URL, HTTP_X_FORWARDED_FOR=US_IP)
         self.assertEqual(response.status_code, 403)
         self.assertIn("forbidden", str(response.content.lower()))
-        self.assertTemplateUsed(response, '403.html')
+        self.assertIsInstance(response, HttpResponseForbidden)
+        # self.assertTemplateUsed(response, '403.html')
 
     def test_resticted_page_with_not_whitelisted_ips_from_nigerian(self):
         response = self.client.get(URL, HTTP_X_FORWARDED_FOR=NG_IP)

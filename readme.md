@@ -20,8 +20,8 @@ Django Nigerians Only is a third party Django application that allows developers
 
 ```python
 MIDDLEWARE = [
-   ...
-   'nigerian_only.middleware.NigerianOnlyMiddleware',
+...
+   'nigerian_only.middleware.NigeriansOnlyMiddleware',
 ]
 ```
    
@@ -29,10 +29,10 @@ MIDDLEWARE = [
 [Country Codes Alpha-2 & Alpha-3](https://www.iban.com/country-codes)
 
 ```python
-WHITELISTED_COUNTRIES = ["NG", "GH"]
+WHITELISTED_COUNTRIES = ["NG"]
 ```
 
-5. Download the GEOIP2 database from [MaxMind](https://dev.maxmind.com/geoip/geoip2/geolite2/) and set the path in the settings.
+5. Download the GEOIP2 database from [MaxMind](https://dev.maxmind.com/geoip/geoip2/geolite2/) and set the path in your `settings.py`. You can read more on setting up GeoIP for django [here](https://docs.djangoproject.com/en/5.1/ref/contrib/gis/geoip2/).
     
 ```python
 GEOIP_PATH = "path/to/GeoLite2-Country.mmdb"
@@ -78,4 +78,3 @@ Contact Me:
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lawal-afeez/)
 - Github: [Github](https://github.com/Afeez31)
 
-LICENSE: https://github.com/Afeez1131/LICENSE
